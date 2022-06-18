@@ -10,7 +10,10 @@ namespace InterviewCodes
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Blah");
+            _Delegate d = new _Delegate();
+            
+            d.Start();
+            Console.ReadKey();
         }
     }
 }
