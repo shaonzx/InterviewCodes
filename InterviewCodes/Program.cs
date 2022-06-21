@@ -10,9 +10,13 @@ namespace InterviewCodes
     {
         static void Main(string[] args)
         {
-            _Delegate d = new _Delegate();
+            #region Delegates
+            /*_Delegate d = new _Delegate();
+            d.Start();*/
+            #endregion
+
             
-            d.Start();
+
             Console.ReadKey();
         }
     }
