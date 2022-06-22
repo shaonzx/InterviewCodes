@@ -15,9 +15,61 @@ namespace InterviewCodes
             d.Start();*/
             #endregion
 
-            
+            #region Tuple
 
-            Console.ReadKey();
+            /*var person = Tuple.Create(1, "Steve", "Jobs", 322);
+            Console.WriteLine(person.Item4);
+
+            //Tuples can hold custom types
+            Students aStudent = new Students();
+            var stuRec = Tuple.Create(aStudent, 1, "Some string");
+
+            //Tuple can hold eight items at most, following will throw an error.
+            //var someOtherTuple = Tuple.Create(1, 2, 3, 4, 5, 6, 7, 8, 9);
+            */
+
+            #endregion
+
+            #region Dictionary
+
+            /*Dictionary<string, Int16> AuthorList = new Dictionary<string, Int16>();
+            AuthorList.Add("Mahesh Chand", 35);
+            AuthorList.Add("Mike Gold", 25);
+            AuthorList.Add("Praveen Kumar", 29);
+            AuthorList.Add("Raj Beniwal", 21);
+            AuthorList.Add("Dinesh Beniwal", 84);
+            // Read all data
+            Console.WriteLine("Authors List");
+            foreach (KeyValuePair<string, Int16> author in AuthorList)
+            {
+                Console.WriteLine("Key: {0}, Value: {1}", author.Key, author.Value);
+            }*/
+
+            #endregion
+
+            #region IEnumerable - IEnumerator
+
+            //array implements IEnumerable
+            var arr = new int[] {1, 2, 3, 4, 5};
+            foreach (int i in arr)
+            {
+                Console.WriteLine(i);
+            }
+
+            arr.GetEnumerator();
+
+            //List implements IEnumerable
+            List<Students> _students = new List<Students>();
+            _students.Add(new Students(){Grade = 1, Name = "King Bob", TotalScore = 599});
+
+            foreach (Students student in _students)
+            {
+                Console.WriteLine(student.Name);
+            }
+
+            #endregion
+
+            Console.ReadLine();
         }
     }
 }
