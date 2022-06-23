@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using InterviewCodes.AnotherNamespace;
 
 namespace InterviewCodes
 {
@@ -68,6 +69,8 @@ namespace InterviewCodes
             }
 
             #endregion
+
+            //OhMyClass.AccessMethodFromOtherNamespace();
 
             Console.ReadLine();
         }
