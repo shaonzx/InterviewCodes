@@ -51,7 +51,7 @@ namespace InterviewCodes
             #region IEnumerable - IEnumerator
 
             //array implements IEnumerable
-            var arr = new int[] {1, 2, 3, 4, 5};
+            /*var arr = new int[] {1, 2, 3, 4, 5};
             foreach (int i in arr)
             {
                 Console.WriteLine(i);
@@ -66,11 +66,19 @@ namespace InterviewCodes
             foreach (Students student in _students)
             {
                 Console.WriteLine(student.Name);
-            }
+            }*/
 
             #endregion
 
             //OhMyClass.AccessMethodFromOtherNamespace();
+
+            #region Reflection
+
+            _Reflection re = new _Reflection();
+            re.SomeMethod(typeof(string), "ADDRESS");
+
+            #endregion
+
 
             Console.ReadLine();
         }
