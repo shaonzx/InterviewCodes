@@ -8,27 +8,14 @@ namespace InterviewCodes
 {
     class _Delegate
     {
-        private List<Students> _students;
-        private Students aStudent;
         public _Delegate()
         {
-            _students = new List<Students>();
-            //populating data for this example
-            _students.Add(new Students() {Grade = 1, Name = "Abul", TotalScore = 599});
-            _students.Add(new Students() {Grade = 2, Name = "Babul", TotalScore = 850});
-            _students.Add(new Students() {Grade = 3, Name = "Momen", TotalScore = 700});
-            _students.Add(new Students() {Grade = 4, Name = "Alga", TotalScore = 433});
-            _students.Add(new Students() {Grade = 3, Name = "Kusu", TotalScore = 532});
-            _students.Add(new Students() {Grade = 5, Name = "Mlew", TotalScore = 725});
-            _students.Add(new Students() {Grade = 2, Name = "Candy", TotalScore = 647});
-            _students.Add(new Students() {Grade = 1, Name = "Habil", TotalScore = 482});
-            _students.Add(new Students() {Grade = 3, Name = "Kabil", TotalScore = 992});
-            _students.Add(new Students() {Grade = 4, Name = "Shamsu", TotalScore = 325});
 
         }
 
         /**
          * A delegate is a reference type which holds reference to a method.
+         * Mostly used in designing frameworks.
          */
 
         //delegate - type - delegateName (params)
@@ -42,7 +29,7 @@ namespace InterviewCodes
 
         }
 
-        
+
         //delegate pattern match - return type + parameters
         public void Foo(int a)
         {
@@ -55,5 +42,73 @@ namespace InterviewCodes
             //do something
         }
 
+    }
+
+    /**
+     * Let's consider we are developing a image processing framework using the code below
+     * What if some other developer wants to use this  framework and add another filter?
+     * In such case we need to add that filter manually in PhotoFilters class and
+     * rebuild our framework.
+     *
+     * See main function how we created a new filter without  modifying this one.
+     * 
+     */
+
+    public class Photo
+    {
+        public static Photo Load(string path)
+        {
+            return new Photo();
+        }
+
+        public void Save()
+        {
+
+        }
+    }
+
+    public class PhotoProcessor
+    {
+        /**
+         * So, to solve this problem we create a delegate. 
+         */
+        public delegate void PhotoFilterHandler(Photo photo);
+
+        public void Process(string path)
+        {
+            var photo = Photo.Load(path);
+
+            var filters = new PhotoFilters();
+            filters.ApplyBrightness(photo);
+            filters.ApplyContrast(photo);
+            filters.Resize(photo);
+
+            photo.Save();
+        }
+
+        //instead of above method, we use the below.
+        public void Process(string path, PhotoFilterHandler handler)
+        {
+            var photo = Photo.Load(path);
+            handler(photo);
+        }
+    }
+
+    public class PhotoFilters
+    {
+        public void ApplyBrightness(Photo photo)
+        {
+            Console.WriteLine("Apply brightness");
+        }
+
+        public void ApplyContrast(Photo photo)
+        {
+            Console.WriteLine("Apply Contrast");
+        }
+
+        public void Resize(Photo photo)
+        {
+            Console.WriteLine("Photo resized");
+        }
     }
 }

@@ -14,6 +14,23 @@ namespace InterviewCodes
             #region Delegates
             /*_Delegate d = new _Delegate();
             d.Start();*/
+
+            PhotoProcessor processor = new PhotoProcessor();
+            var filters = new PhotoFilters();
+
+            //using existing filters in below two lines
+            PhotoProcessor.PhotoFilterHandler handler = filters.ApplyBrightness;
+            handler += filters.Resize;
+
+            //use developer developed filter below (no filters object)
+            handler += RemoveRedEyeFilter;
+
+            processor.Process("", handler);
+
+            void RemoveRedEyeFilter(Photo photo)
+            {
+                Console.WriteLine("Red eye removed");
+            }
             #endregion
 
             #region Tuple
@@ -74,8 +91,8 @@ namespace InterviewCodes
 
             #region Reflection
 
-            _Reflection re = new _Reflection();
-            re.SomeMethod(typeof(string), "ADDRESS");
+            /*_Reflection re = new _Reflection();
+            re.SomeMethod(typeof(string), "ADDRESS");*/
 
             #endregion
 
