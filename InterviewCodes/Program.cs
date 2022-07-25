@@ -15,7 +15,7 @@ namespace InterviewCodes
             /*_Delegate d = new _Delegate();
             d.Start();*/
 
-            PhotoProcessor processor = new PhotoProcessor();
+            /*PhotoProcessor processor = new PhotoProcessor();
             var filters = new PhotoFilters();
 
             //using existing filters in below two lines
@@ -30,7 +30,7 @@ namespace InterviewCodes
             void RemoveRedEyeFilter(Photo photo)
             {
                 Console.WriteLine("Red eye removed");
-            }
+            }*/
             #endregion
 
             #region Tuple
@@ -96,6 +96,16 @@ namespace InterviewCodes
 
             #endregion
 
+            #region Events and Delegates
+
+            VideoEncoder aEncoder = new VideoEncoder(); //publisher
+            aEncoder.videoEncoded += (new MailService()).OnVideoEncoded; //subscriber
+            aEncoder.videoEncoded += (new MessageService()).OnVideoEncoded; //subscriber
+
+
+            aEncoder.Encode(new Video());
+
+            #endregion
 
             Console.ReadLine();
         }
