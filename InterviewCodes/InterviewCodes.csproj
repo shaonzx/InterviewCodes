@@ -54,6 +54,7 @@
     <Compile Include="_Namespace.cs" />
     <Compile Include="_ParallelProgramming.cs" />
     <Compile Include="_Reflection.cs" />
+    <Compile Include="_Singleton.cs" />
     <Compile Include="_Tuple.cs" />
   </ItemGroup>
   <ItemGroup>

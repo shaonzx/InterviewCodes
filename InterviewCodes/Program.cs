@@ -128,6 +128,16 @@ namespace InterviewCodes
             Console.WriteLine(aStringBuilder);*/
             #endregion
 
+            #region Singleton
+
+            //MySingleton singleton = new MySingleton();
+            //MySingleton.PrintCrap();
+            //MySingleton._instance.PrintCrap();
+
+            //final
+            //(MySingleton.Instance).PrintCrap(); //bracket na dileo chole, bujhar jonno dilam
+
+            #endregion
             Console.ReadLine();
         }
     }
