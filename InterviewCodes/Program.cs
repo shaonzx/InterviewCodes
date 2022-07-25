@@ -98,13 +98,34 @@ namespace InterviewCodes
 
             #region Events and Delegates
 
-            VideoEncoder aEncoder = new VideoEncoder(); //publisher
+            /*VideoEncoder aEncoder = new VideoEncoder(); //publisher
             aEncoder.videoEncoded += (new MailService()).OnVideoEncoded; //subscriber
             aEncoder.videoEncoded += (new MessageService()).OnVideoEncoded; //subscriber
 
 
-            aEncoder.Encode(new Video());
+            aEncoder.Encode(new Video());*/
 
+            #endregion
+
+            #region StringVsStringBuilder
+
+            /**
+             * A string instance is immutable. You cannot change it after it was created.
+             * Any operation that appears to change the string instead returns a new instance.
+             */
+
+            /*string foo = "Foo";
+            // returns a new string instance instead of changing the old one
+            string bar = foo.Replace('o', 'a');
+            string baz = foo + "bar"; // ditto here
+
+            /*
+             * StringBuilder is mutable, changes are made on existing instance.
+             #1#
+            StringBuilder aStringBuilder = new StringBuilder("");
+            aStringBuilder.Append("Hello Visitor");
+            aStringBuilder.Append("How Are You ??");
+            Console.WriteLine(aStringBuilder);*/
             #endregion
 
             Console.ReadLine();

@@ -48,6 +48,7 @@
     <Compile Include="Students.cs" />
     <Compile Include="_AsynchronousCode.cs" />
     <Compile Include="_Delegate.cs" />
+    <Compile Include="_DependencyInjection.cs" />
     <Compile Include="_EventsAndDelegates.cs" />
     <Compile Include="_IEnumerable.cs" />
     <Compile Include="_Namespace.cs" />
