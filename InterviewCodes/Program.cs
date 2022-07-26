@@ -135,7 +135,16 @@ namespace InterviewCodes
             //MySingleton._instance.PrintCrap();
 
             //final
-            //(MySingleton.Instance).PrintCrap(); //bracket na dileo chole, bujhar jonno dilam
+            /*(MySingleton.Instance).PrintCrap(); //bracket na dileo chole, bujhar jonno dilam
+
+            MySingleton.Instance.SomeExecutionCounter();
+
+            for (int i = 0; i < 3; i++)
+            {
+                MySingleton.Instance.SomeExecutionCounter();
+            }
+            Console.ReadLine();
+            MySingleton.Instance.SomeExecutionCounter();*/
 
             #endregion
             Console.ReadLine();

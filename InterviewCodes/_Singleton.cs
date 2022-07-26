@@ -6,10 +6,15 @@ using System.Threading.Tasks;
 
 namespace InterviewCodes
 {
-    public class MySingleton    
+    public class MySingleton
     {
+        private int counter;
         //parameterless private constructor prevents creation of instances.
-        private MySingleton() {/*implementions not necessary*/}
+        private MySingleton()
+        {
+            /*implementions not necessary*/
+            counter = 0;
+        }
 
         //Initialize private instance which can access private constructor
         //private static MySingleton _instance = null; -- for lazy loading implemention
@@ -32,6 +37,11 @@ namespace InterviewCodes
         public void PrintCrap()
         {
             Console.WriteLine("This is crap from Singleton class!");
+        }
+
+        public void SomeExecutionCounter()
+        {
+            Console.WriteLine(string.Format("The procedure executed {0} times", ++counter));
         }
     }
 }
